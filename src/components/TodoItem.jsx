@@ -8,11 +8,20 @@ const TodoItem = ({ todo }) => {
       payload: id,
     });
   };
+  //complete Todo
+  const onComplete = (id) => {
+    return dispatch({
+      type: "todos/completeTodo",
+      payload: id,
+    });
+  };
   return (
     <div>
-      <h3>{todo.item}</h3>
+      <h3 className={`todo${todo.completed ? "Completed" : ""}`}>
+        {todo.item}
+      </h3>
       <div>
-        <button>Complete</button>
+        <button onClick={() => onComplete(todo.id)}>Complete</button>
         <button onClick={() => onDelete(todo.id)}>Delete</button>
       </div>
     </div>

@@ -34,3 +34,8 @@
 .todo_btn:active {
   background-color: #0e9594;
 }
+.todoCompleted {
+  color: #0e9594;
+  font-size: 1.2rem;
+  text-decoration: line-through;
+}
