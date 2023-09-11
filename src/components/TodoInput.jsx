@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
 const TodoInput = () => {
   const [input, setInput] = useState("");
@@ -10,6 +11,7 @@ const TodoInput = () => {
     e.preventDefault();
     setInput("");
   };
+
   console.log(input);
   return (
     <div>
