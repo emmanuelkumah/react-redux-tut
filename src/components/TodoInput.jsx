@@ -2,17 +2,29 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 const TodoInput = () => {
-  const [input, setInput] = useState("");
+  const [todo, setTodo] = useState("");
+  const dispatch = useDispatch();
 
-  const onAddTodo = (e) => {
-    setInput(e.target.value);
+  const onInputTodo = (e) => {
+    setTodo(e.target.value);
   };
+  //handle submission of todo
   const handleTodoSubmit = (e) => {
     e.preventDefault();
-    setInput("");
+    addTodo();
+    setTodo("");
   };
-
-  console.log(input);
+  //action creators
+  const addTodo = () => {
+    return dispatch({
+      type: "todos/addedTodo",
+      payload: {
+        id: Math.floor(Math.random() * 20) + 1.1,
+        item: todo,
+        completed: false,
+      },
+    });
+  };
   return (
     <div>
       <form className="todo_form_container" onSubmit={handleTodoSubmit}>
@@ -20,8 +32,8 @@ const TodoInput = () => {
           className="todo_input"
           type="text"
           placeholder="Enter your todo"
-          value={input}
-          onChange={onAddTodo}
+          value={todo}
+          onChange={onInputTodo}
         />
         <button className="todo_btn">Add Todo</button>
       </form>
