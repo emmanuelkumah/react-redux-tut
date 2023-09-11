@@ -1,13 +1,16 @@
-import { useState } from "react";
-
 import "./App.css";
+import TodoHeading from "./components/TodoHeading";
+import TodoInput from "./components/TodoInput";
+import TodoList from "./components/TodoList";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <h2>React Redux changens</h2>
+      <main className="todo_container">
+        <TodoHeading />
+        <TodoInput />
+        <TodoList />
+      </main>
     </>
   );
 }
