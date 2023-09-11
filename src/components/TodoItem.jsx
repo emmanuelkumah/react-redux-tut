@@ -1,9 +1,13 @@
 import React from "react";
 
-const TodoItem = () => {
+const TodoItem = ({ todo }) => {
   return (
     <div>
-      <h3>List of tasks to be done</h3>
+      <h3>{todo.item}</h3>
+      <div>
+        <button>Complete</button>
+        <button>Delete</button>
+      </div>
     </div>
   );
 };
