@@ -1,12 +1,11 @@
 import React from "react";
-
 const TodoHeading = () => {
   return (
     <>
-      <header className="todo_heading">
-        <h2>Tasks to be done</h2>
-        <p>What you would like to do today?</p>
-      </header>
+      <section className="todo_caption">
+        <h2>Taskly</h2>
+        <h3>What would you like to do today?</h3>
+      </section>
     </>
   );
 };

@@ -17,11 +17,11 @@ const TodoItem = ({ todo }) => {
     });
   };
   return (
-    <div>
+    <div className="todo_item-container">
       <h3 className={`todo${todo.completed ? "Completed" : ""}`}>
         {todo.item}
       </h3>
-      <div>
+      <div className="todo_btn">
         <button onClick={() => onComplete(todo.id)}>Complete</button>
         <button onClick={() => onDelete(todo.id)}>Delete</button>
       </div>

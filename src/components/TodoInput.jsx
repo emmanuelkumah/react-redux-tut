@@ -31,11 +31,12 @@ const TodoInput = () => {
         <input
           className="todo_input"
           type="text"
-          placeholder="Enter your todo"
+          placeholder="Enter the task for today"
           value={todo}
+          autoFocus
           onChange={onInputTodo}
         />
-        <button className="todo_btn">Add Todo</button>
+        <button className="todo_btn-add">Add Todo</button>
       </form>
     </div>
   );
